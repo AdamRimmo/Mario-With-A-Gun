@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://devuqbn36hbe3"]
+
+[ext_resource type="Script" path="res://godoba.gd" id="1_dueny"]
+[ext_resource type="Texture2D" uid="uid://cvlycex1u672v" path="res://Assets/icon.svg" id="1_pn4mx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4qgn"]
+size = Vector2(32, 32)
+
+[node name="Godoba" type="CharacterBody2D"]
+script = ExtResource("1_dueny")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o4qgn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_pn4mx")

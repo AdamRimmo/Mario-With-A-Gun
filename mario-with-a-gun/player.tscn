@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhcle2kxeuoi0"]
+
+[ext_resource type="Script" path="res://Movement.gd" id="1_470hh"]
+[ext_resource type="Texture2D" uid="uid://cpffr5ogtf52y" path="res://Assets/Simple Tileset.png" id="2_ndy4b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75a3j"]
+size = Vector2(22, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edkok"]
+size = Vector2(22, 58)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_470hh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_75a3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ndy4b")
+region_enabled = true
+region_rect = Rect2(0, 64, 32, 64)
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="HurtboxCollision" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_edkok")
